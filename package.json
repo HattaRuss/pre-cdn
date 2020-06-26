@@ -13,6 +13,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "start": "node src/app/server.js",
+    "preinstall": "npm install -g angular-cli",
     "postinstall": "ng build --aot -prod"
   },
   "private": true,
