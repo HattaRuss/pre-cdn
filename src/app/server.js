@@ -16,7 +16,8 @@ app.use(function (req, res, next) {
   next();
 });
 
-app.use(express.static('./dist/package.json'));
+app.use(express.static('./dist/'));
+
 
 // simple route
 app.get("/", (req, res) => {

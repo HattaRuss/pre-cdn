@@ -1,12 +1,10 @@
-# SB Admin rewritten in Angular7 and Material2
+# Pre-CDN System in Angular8 and Material2
 
-Simple Dashboard Admin App built using Angular 7 and Material 2.
-
-This project is a port of the famous Free Admin Bootstrap Theme [SB Admin v1.0](http://startbootstrap.com/template-overviews/sb-admin-2/) to Angular6 Theme.
+Simple Pre-CDN System App built using Angular 8 and Material 2.
 
 ## [Demo](http://rawgit.com/start-javascript/pre-cdn/master/dist/)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.6.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.x.
 
 ### Introduction
 
