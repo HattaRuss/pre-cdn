@@ -1,6 +1,9 @@
 {
   "name": "pre-cdn",
   "version": "8.0.0",
+  "engines": {
+    "node": "10.x"
+  },
   "scripts": {
     "ng": "ng",
     "build": "ng build",
