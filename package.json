@@ -42,7 +42,7 @@
     "angular-font-awesome": "^3.1.2",
     "autoprefixer": "^9.7.3",
     "body-parser": "^1.19.0",
-    "bootstrap": "^4.2.1",
+    "bootstrap": "4.2.1",
     "bootstrap-scss": "^4.4.1",
     "browserslist": "^4.8.0",
     "caniuse-lite": "^1.0.30001012",
