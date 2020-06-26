@@ -1,0 +1,170 @@
+<div class="header pb-8 pt-5 pt-md-8"
+    style="background-image: url('assets/img/top-bar-back.jpg'); background-repeat: no-repeat; background-size: 100%">
+    <div class="container-fluid">
+        <div class="header-body">
+            <!-- Card stats -->
+            <div class="row">
+                <div class="col-xl-12 col-lg-6">
+                    <div class="card card-stats mb-4 mb-xl-0">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col">
+                                    <h5 class="card-title text-uppercase text-muted mb-0">Total</h5>
+                                    <span class="h2 font-weight-bold mb-0">{{totalUsers}}</span>
+                                </div>
+                                <div class="col-auto">
+                                    <div class="icon icon-shape bg-warning text-white rounded-circle shadow">
+                                        <i class="fas fa-users"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="mt-3 mb-0 text-muted text-sm">
+                                <span class="text-success mr-2"><i class="fa fa-arrow-up"></i></span>
+                                <span class="text-nowrap">Registered Users</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid mt--7">
+    <div class="row">
+        <div class="col-xl-12">
+            <div class="card shadow">
+                <div class="card-header border-0">
+                    <div class="row align-items-center">
+                        <div class="col">
+                            <h6 class="text-uppercase text-light ls-1 mb-1">Add/Edit Freelancers</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="RegistrationForm" novalidate (ngSubmit)="onSubmit(RegistrationForm.value)">
+                        <div class="form-group">
+                            <div class="input-group input-group-alternative">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><span style="color: red">*</span><i
+                                            class="ni ni-single-02"></i></span>
+                                </div>
+                                <input type="text" class="form-control" [(ngModel)]="inputUsername" required="required"
+                                    maxlength="50" formControlName="username" placeholder="Username"
+                                    (blur)="CheckValidateName($event.target.value)">
+                            </div>
+                            <span style="color: red; font-size: small" id="spanNameInValid"
+                                *ngIf="IsSpanNameInValid">Name is
+                                invalid.</span>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group input-group-alternative">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><span style="color: red">*</span><i
+                                            class="ni ni-email-83"></i></span>
+                                </div>
+                                <input type="email" class="form-control" [(ngModel)]="inputEmail" required="required"
+                                    formControlName="email" (blur)="CheckValidateEmail($event.target.value)"
+                                    (keyup)="CheckValidateEmail($event.target.value)" placeholder="Email">
+                            </div>
+                            <span style="color: red; font-size: small" id="spanEmailInValid"
+                                *ngIf="IsSpanEmailInValid">Email is
+                                invalid.</span>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group input-group-alternative">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><span style="color: red">*</span><i
+                                            class="ni ni-mobile-button"></i></span>
+                                    <span class="form-control"> (+6) </span>
+                                </div>
+                                <input class="form-control" type="tel" [(ngModel)]="inputPhoneNo" required="required"
+                                    placeholder="Phone Number" formControlName="phonenumber" maxlength="13">
+                            </div>
+                            <span style="color: red; font-size: small" id="spanPhoneNumberOnly"
+                                *ngIf="IsSpanPhoneNumberOnly">Please
+                                enter number only.</span>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group input-group-alternative">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><span style="color: red">*</span><i
+                                            class="ni ni-paper-diploma"></i></span>
+                                </div>
+                                <input type="text" class="form-control" [(ngModel)]="inputSkillsets" required="required"
+                                    maxlength="50" formControlName="skillsets" placeholder="SkillSets">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group input-group-alternative">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><span style="color: red">*</span><i
+                                            class="ni ni-controller"></i></span>
+                                </div>
+                                <input type="text" class="form-control" [(ngModel)]="inputHobby" required="required"
+                                    maxlength="50" formControlName="hobby" placeholder="Hobby">
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <button type="reset" (click)="resetFields()" class="btn btn-secondary">Reset</button>
+                            &nbsp;
+                            <button type="submit" mat-raised-button class="btn" color="primary"
+                                [disabled]="!RegistrationForm.valid">Submit</button>
+                            &nbsp;
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-xl-12">
+            <div class="card shadow">
+                <div class="card-header border-0">
+                    <div class="row align-items-center">
+                        <div class="col">
+                            <h3 class="mb-0">List of Freelancers</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <!-- Projects table -->
+                    <table class="table align-items-center table-flush">
+                        <thead class="thead-light">
+                            <tr>
+                                <th scope="col">No</th>
+                                <th scope="col">Username</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Phone Number</th>
+                                <th scope="col">SkillSets</th>
+                                <th scope="col">Hobby</th>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let user of allusers | paginate: { itemsPerPage: itemsPerPage, currentPage: currentPage }; let i = index"
+                                [attr.data-index]="i">
+                                <td>{{(itemsPerPage)*(currentPage-1)+(i+1)}}</td>
+                                <td>{{user.Username}}</td>
+                                <td>{{user.Email}}</td>
+                                <td>{{user.PhoneNumber}}</td>
+                                <td>{{user.SkillSets}}</td>
+                                <td>{{user.Hobby}}</td>
+                                <td><button class="btn btn-sm btn-success"
+                                        (click)="onClick_EditUser(user.id)">EDIT</button></td>
+                                <td><button class="btn btn-sm btn-danger"
+                                        (click)="onClick_DeleteUser(user.id)">DELETE</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="card-footer py-4" style="text-align: center">
+                    <div style="text-align: center">
+                        <pagination-controls (pageChange)="currentPage = $event"></pagination-controls>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,230 @@
+<nav class="navbar navbar-top navbar-horizontal navbar-expand-md navbar-dark"
+  style="background-image: url('assets/images/top-bar-back.jpg'); background-repeat: no-repeat; background-size: 100%; position: fixed;  z-index: 100;width: 100%;">
+  <div class="container px-0">
+    <a class="navbar-brand" style="color: white; ">
+      CDN SYSTEM
+    </a>
+    <button class="navbar-toggler" type="button" (click)="isCollapsed=!isCollapsed"
+      aria-controls="sidenav-collapse-main">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" [ngbCollapse]="isCollapsed" id="sidenav-collapse-main">
+      <!-- Collapse header -->
+      <div class="navbar-collapse-header d-md-none">
+        <div class="row">
+          <div class="col-6 collapse-brand">
+            <a>
+              CDN SYSTEM
+            </a>
+          </div>
+          <div class="col-6 collapse-close">
+            <button type="button" class="navbar-toggler" (click)="isCollapsed=!isCollapsed">
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- Navbar items -->
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <button class="btn btn-sm" mat-button  (click)="scrollToAnchor('home', 100)"><a
+            class="nav-link btn-sm" style="color: white; text-decoration: none; padding-top: 5px; padding-bottom: 5px">HOME</a></button>
+        </li>
+        <li class="nav-item">
+          <button class="btn btn-sm" mat-button (click)="scrollToAnchor('about-sec', 100)"><a
+            class="nav-link btn-sm" style="color: white; text-decoration: none;padding-top: 5px; padding-bottom: 5px">ABOUT</a></button>
+        </li>
+        <li class="nav-item">
+          <button mat-button (click)="scrollToAnchor('contact-sec', 100)"><a
+            class="nav-link btn-sm" style="color: white; text-decoration: none; padding-top: 5px; padding-bottom: 5px">CONTACT</a></button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!--NAVBAR SECTION END-->
+<div class="home-sec" id="home">
+  <br>
+  <div class="overlay">
+    <div class="container">
+      <div class="row text-center ">
+        <div class="col-lg-12  col-md-12 col-sm-12">
+          <div class="flexslider set-flexi" id="main-section">
+            <ul class="slides move-me">
+              <!-- Slider 01 -->
+              <li>
+                <div class="row justify-content-center">
+                  <div class="col-lg-5 col-md-6">
+                    <h2 class="text-white">Welcome!</h2>
+                    <p class="text-lead text-light">Complete Developer Network System</p>
+                  </div>
+                </div>
+                <h1>HIGH SECURITY AND PRIVACY</h1>
+                <a href="#" class="btn btn-success btn-lg" (click)="onClickAdminModal()">
+                  LOGIN AS ADMIN
+                </a>
+              </li>
+              <!-- End Slider 01 -->
+              <!-- Slider 02 -->
+              <li>
+                <div class="row justify-content-center">
+                  <div class="col-lg-5 col-md-6">
+                    <h2 class="text-white">Welcome!</h2>
+                    <p class="text-lead text-light">Complete Developer Network System</p>
+                  </div>
+                </div>
+                <h1>FAST AND RELIABLE</h1>
+                <a href="#" class="btn btn-danger btn-lg" (click)="onClickAdminModal()">
+                  LOGIN AS ADMIN
+                </a>
+              </li>
+              <!-- End Slider 02 -->
+              <!-- Slider 03 -->
+              <li>
+                <div class="row justify-content-center">
+                  <div class="col-lg-5 col-md-6">
+                    <h2 class="text-white">Welcome!</h2>
+                    <p class="text-lead text-light">Complete Developer Network System</p>
+                  </div>
+                </div>
+                <h1>ALL IN ONE</h1>
+                <a href="#" class="btn btn-info btn-lg" (click)="onClickAdminModal()">
+                  LOGIN AS ADMIN
+                </a>
+              </li>
+              <!-- End Slider 03 -->
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<!--HOME SECTION END-->
+
+<!--HOME SECTION TAG LINE END-->
+<div id="about-sec" class="container set-pad">
+  <br>
+  <div class="row text-center">
+    <div class="col-lg-12 col-lg-offset-2 col-md-12 col-sm-12 col-md-offset-2 col-sm-offset-2">
+      <h1 data-scroll-reveal="enter from the bottom after 0.2s" class="header-line">ABOUT</h1>
+      <p data-scroll-reveal="enter from the bottom after 0.3s">
+        Complete Developer Network (CDN) System is all about list of freelancers where they could have a directory of contact get people for their job.
+      </p>
+    </div>
+
+  </div>
+</div>
+<!-- ABOUT SECTION END-->
+<div id="contact-sec">
+  <br>
+  <div class="container set-pad">
+    <div class="row text-center">
+      <div class="col-lg-12 col-lg-offset-2 col-md-12 col-sm-12 col-md-offset-2 col-sm-offset-2">
+        <h1 data-scroll-reveal="enter from the bottom after 0.1s" class="header-line">CONTACT US</h1>
+        <p data-scroll-reveal="enter from the bottom after 0.3s">
+          Our main office is located in Malaysia and we welcome your comments and enquiries any time.
+        </p>
+      </div>
+
+    </div>
+    <!--/.HEADER LINE END-->
+
+    <div class="row">
+      <div class="col-lg-4  col-md-4 col-sm-4" data-scroll-reveal="enter from the bottom after 0.4s">
+        <div class="faculty-div">
+          <h3>Address</h3>
+          <hr />
+          <p>
+            Complete Developer Network <br>
+            50000 Kuala Lumpur <br>
+            Malaysia
+          </p>
+        </div>
+      </div>
+      <div class="col-lg-4  col-md-4 col-sm-4" data-scroll-reveal="enter from the bottom after 0.5s">
+        <div class="faculty-div">
+          <h3>Contact No</h3>
+          <hr />
+          <p>
+            Telephone : +603 8000 1234 <br>
+            Fax : +603 8000 1234 <br>
+          </p>
+        </div>
+      </div>
+      <div class="col-lg-4  col-md-4 col-sm-4" data-scroll-reveal="enter from the bottom after 0.6s">
+        <div class="faculty-div">
+          <h3>Email</h3>
+          <hr />
+          <p>
+            Sales Inquiries: marketing@cdn.com.my <br>
+            Customer Service/Technical Support: customerservice@cdn.com.my
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- CONTACT SECTION END-->
+
+<div class="backdrop" [ngStyle]="{'display':display}"></div>
+<div class="modal" id="ModalEmailVerify" role="dialog" [ngStyle]="{'display':display}">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="modal-header">
+          <span>
+            <h5 class="modal-title">Login as Admin</h5>
+          </span>
+          <i class="ni ni-key-25 text-green"></i>
+        </div>
+        <hr class="my-2" />
+        <div class="modal-body">
+          <div class="card-body px-lg-2 py-lg-2">
+            <div class="text-center text-muted mb-2">
+              <small>Sign in with credentials</small>
+            </div>
+            <div class="form-group mb-3">
+              <div class="input-group input-group-alternative">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="ni ni-single-02"></i></span>
+                </div>
+                <input class="form-control" formControlName="username" placeholder="Username" type="text">
+              </div>
+              <span style="color: red; font-size: small" *ngIf="username.errors">Username is required.</span>
+            </div>
+            <div class="form-group">
+              <div class="input-group input-group-alternative">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                </div>
+                <input class="form-control" formControlName="password" placeholder="******" type="password">
+              </div>
+              <span style="color: red; font-size: small" *ngIf="password.errors"> Password is required. </span>
+            </div>
+            <p class="text-center" style="color:red; font-size: small" *ngIf="loginError"> {{loginError}}</p>
+            <div>
+              <mat-progress-bar mode="indeterminate" *ngIf="IsProgressBarLogin"></mat-progress-bar>
+            </div>
+            <div class="text-center">
+              <button type="button" class="btn btn-secondary" (click)="onCloseHandled()">Cancel</button>
+              &nbsp;
+              <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Login</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<nav class="navbar fixed-bottom" style="background-color: #3f51b5; margin-top: 10px">
+  <span style="text-align: center; font-size: small; color: white">Copyright &#169; 2020. All
+    Rights Reserved. | Terms of Use and Privacy Policy </span>
+  <div style="float: right">
+    <span style="font-size: small; color: white">{{appversion}}</span>
+  </div>
+</nav>
