@@ -4,7 +4,7 @@ Simple Pre-CDN System App built using Angular 8 and Material 2.
 
 ## [Demo](https://pre-cdn-demo-app.herokuapp.com/)
 
-This Pre CDN System demo project was deployed to Heroku.
+This Pre CDN System demo project was deployed to Heroku with add-on mLab MongoDB.
 
 ## How to use Pre-CDN System
 
