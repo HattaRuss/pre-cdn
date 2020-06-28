@@ -8,15 +8,15 @@ This Pre CDN System demo project was deployed to Heroku.
 
 ## How to use Pre-CDN System
 
-1.Click on Demo above.
-2.Click on 'LOGIN AS ADMIN' on main page.
-3.When login dialog appear, just click on Login (Username & Password already pre-set).
-4.It will navigate to Dashboard page in Admin module. Fill in all required details and click submit to add new record.
-5.On the table below, it will display all the record and it allow to edit or delete.
-6.When click edit, all the details will auto populate in the form above.
-7.When click delete, selected record will be remove.
-8.Extra, there is total of registered user on top of page.
-9.Done.
+1. Click on Demo above.
+2. Click on 'LOGIN AS ADMIN' on main page.
+3. When login dialog appear, just click on Login (Username & Password already pre-set).
+4. It will navigate to Dashboard page in Admin module. Fill in all required details and click submit to add new record.
+5. On the table below, it will display all the record and it allow to edit or delete.
+6. When click edit, all the details will auto populate in the form above.
+7. When click delete, selected record will be remove.
+8. Extra, there is total of registered user on top of page.
+9. Done.
 
 
 ### Introduction
