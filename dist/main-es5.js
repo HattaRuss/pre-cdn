@@ -537,25 +537,28 @@
                 function CommonService(http) {
                     this.http = http;
                 }
-                CommonService.prototype.deleteUser = function (id) {
-                    return this.http.delete('http://localhost:8080/api/user/delete/' + id)
+                CommonService.prototype.deleteUser = function (id, url) {
+                    return this.http.delete(url + '/api/user/delete/' + id)
                         .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (response) { return response.json(); }));
                 };
-                CommonService.prototype.addUser = function (user) {
-                    return this.http.post('http://localhost:8080/api/user/adduser', user)
+                CommonService.prototype.addUser = function (user, url) {
+                    return this.http.post(url + '/api/user/adduser', user)
                         .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (response) { return response.json(); }));
                 };
-                CommonService.prototype.updateUser = function (user, id) {
-                    return this.http.put('http://localhost:8080/api/user/update/' + id, user)
+                CommonService.prototype.updateUser = function (user, id, url) {
+                    return this.http.put(url + '/api/user/update/' + id, user)
                         .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (response) { return response.json(); }));
                 };
-                CommonService.prototype.getUserid = function (id) {
-                    return this.http.get('http://localhost:8080/api/user/list-by/' + id)
+                CommonService.prototype.getUserid = function (id, url) {
+                    return this.http.get(url + '/api/user/list-by/' + id)
                         .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (response) { return response.json(); }));
                 };
-                CommonService.prototype.getAllUsers = function () {
-                    return this.http.get('http://localhost:8080/api/user/list-all')
+                CommonService.prototype.getAllUsers = function (url) {
+                    return this.http.get(url + '/api/user/list-all')
                         .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (response) { return response.json(); }));
+                };
+                CommonService.prototype.getMyConfigJSON = function () {
+                    return this.http.get('assets/config/myconfig.json');
                 };
                 return CommonService;
             }());

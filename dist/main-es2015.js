@@ -515,25 +515,28 @@ let CommonService = class CommonService {
     constructor(http) {
         this.http = http;
     }
-    deleteUser(id) {
-        return this.http.delete('http://localhost:8080/api/user/delete/' + id)
+    deleteUser(id, url) {
+        return this.http.delete(url + '/api/user/delete/' + id)
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])((response) => response.json()));
     }
-    addUser(user) {
-        return this.http.post('http://localhost:8080/api/user/adduser', user)
+    addUser(user, url) {
+        return this.http.post(url + '/api/user/adduser', user)
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])((response) => response.json()));
     }
-    updateUser(user, id) {
-        return this.http.put('http://localhost:8080/api/user/update/' + id, user)
+    updateUser(user, id, url) {
+        return this.http.put(url + '/api/user/update/' + id, user)
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])((response) => response.json()));
     }
-    getUserid(id) {
-        return this.http.get('http://localhost:8080/api/user/list-by/' + id)
+    getUserid(id, url) {
+        return this.http.get(url + '/api/user/list-by/' + id)
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])((response) => response.json()));
     }
-    getAllUsers() {
-        return this.http.get('http://localhost:8080/api/user/list-all')
+    getAllUsers(url) {
+        return this.http.get(url + '/api/user/list-all')
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])((response) => response.json()));
+    }
+    getMyConfigJSON() {
+        return this.http.get('assets/config/myconfig.json');
     }
 };
 CommonService.ctorParameters = () => [

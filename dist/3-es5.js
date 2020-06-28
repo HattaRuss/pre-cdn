@@ -29550,8 +29550,20 @@
                 };
                 DashboardComponent.prototype.ngOnInit = function () {
                     var _this_1 = this;
+                    this.newService.getMyConfigJSON().subscribe(function (data) {
+                        var obj = data.json();
+                        var apiUrl = obj['base_url_api'];
+                        console.log(apiUrl);
+                        if (apiUrl != null) {
+                            _this_1.BaseUrlApi = apiUrl;
+                            _this_1.GetAllUsers(_this_1.BaseUrlApi);
+                        }
+                    });
                     this.createForm();
-                    this.newService.getAllUsers().subscribe(function (data) {
+                };
+                DashboardComponent.prototype.GetAllUsers = function (url) {
+                    var _this_1 = this;
+                    this.newService.getAllUsers(url).subscribe(function (data) {
                         console.log(data);
                         _this_1.allusers = data;
                         _this_1.totalUsers = data.length;
@@ -29588,7 +29600,7 @@
                 DashboardComponent.prototype.onClick_EditUser = function (id) {
                     var _this_1 = this;
                     console.log(id);
-                    this.newService.getUserid(id)
+                    this.newService.getUserid(id, this.BaseUrlApi)
                         .subscribe(function (data) {
                         console.log(data);
                         _this_1.ID = data.id;
@@ -29606,7 +29618,7 @@
                 DashboardComponent.prototype.onClick_DeleteUser = function (id) {
                     var _this_1 = this;
                     console.log(id);
-                    this.newService.deleteUser(id)
+                    this.newService.deleteUser(id, this.BaseUrlApi)
                         .subscribe(function (data) {
                         console.log(data);
                         alert(data.message);
@@ -29618,7 +29630,7 @@
                 DashboardComponent.prototype.onSubmit = function (value) {
                     var _this_1 = this;
                     if (this.IsEdit === true) {
-                        this.newService.updateUser(value, this.ID)
+                        this.newService.updateUser(value, this.ID, this.BaseUrlApi)
                             .subscribe(function (data) {
                             console.log(data);
                             alert(data.message);
@@ -29628,7 +29640,7 @@
                         });
                     }
                     else {
-                        this.newService.addUser(value)
+                        this.newService.addUser(value, this.BaseUrlApi)
                             .subscribe(function (data) {
                             console.log(data);
                             alert(data.message);

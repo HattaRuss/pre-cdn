@@ -33105,8 +33105,19 @@ let DashboardComponent = class DashboardComponent {
         window.location.reload();
     }
     ngOnInit() {
+        this.newService.getMyConfigJSON().subscribe(data => {
+            const obj = data.json();
+            const apiUrl = obj['base_url_api'];
+            console.log(apiUrl);
+            if (apiUrl != null) {
+                this.BaseUrlApi = apiUrl;
+                this.GetAllUsers(this.BaseUrlApi);
+            }
+        });
         this.createForm();
-        this.newService.getAllUsers().subscribe(data => {
+    }
+    GetAllUsers(url) {
+        this.newService.getAllUsers(url).subscribe(data => {
             console.log(data);
             this.allusers = data;
             this.totalUsers = data.length;
@@ -33142,7 +33153,7 @@ let DashboardComponent = class DashboardComponent {
     }
     onClick_EditUser(id) {
         console.log(id);
-        this.newService.getUserid(id)
+        this.newService.getUserid(id, this.BaseUrlApi)
             .subscribe(data => {
             console.log(data);
             this.ID = data.id;
@@ -33159,7 +33170,7 @@ let DashboardComponent = class DashboardComponent {
     }
     onClick_DeleteUser(id) {
         console.log(id);
-        this.newService.deleteUser(id)
+        this.newService.deleteUser(id, this.BaseUrlApi)
             .subscribe(data => {
             console.log(data);
             alert(data.message);
@@ -33170,7 +33181,7 @@ let DashboardComponent = class DashboardComponent {
     }
     onSubmit(value) {
         if (this.IsEdit === true) {
-            this.newService.updateUser(value, this.ID)
+            this.newService.updateUser(value, this.ID, this.BaseUrlApi)
                 .subscribe(data => {
                 console.log(data);
                 alert(data.message);
@@ -33180,7 +33191,7 @@ let DashboardComponent = class DashboardComponent {
             });
         }
         else {
-            this.newService.addUser(value)
+            this.newService.addUser(value, this.BaseUrlApi)
                 .subscribe(data => {
                 console.log(data);
                 alert(data.message);
