@@ -2,28 +2,38 @@
 
 Simple Pre-CDN System App built using Angular 8 and Material 2.
 
-## [Demo](http://rawgit.com/start-javascript/pre-cdn/master/dist/)
+## [Demo](https://pre-cdn-demo-app.herokuapp.com/)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.x.
+This Pre CDN System demo project was deployed to Heroku.
+
+## How to use Pre-CDN System
+
+1.Click on Demo above.
+2.Click on 'LOGIN AS ADMIN' on main page.
+3.When login dialog appear, just click on Login (Username & Password already pre-set).
+4.It will navigate to Dashboard page in Admin module. Fill in all required details and click submit to add new record.
+5.On the table below, it will display all the record and it allow to edit or delete.
+6.When click edit, all the details will auto populate in the form above.
+7.When click delete, selected record will be remove.
+8.Extra, there is total of registered user on top of page.
+9.Done.
+
 
 ### Introduction
 
-Provides fast, reliable and extensible starter for the development of Angular projects.
+Provides fast, reliable and extensible starter for the development of Pre CDN System.
 
-`pre-cdn` provides the following features:
+`Pre-CDN` provides the following features:
 
 *   Developed using Material-v2.0.0
-*   angular-v7.1.0
-*   angular/cli-v7.0.6
-*   angular/material-v7.1.0
-*   angular/cdk-v7.1.0
+*   angular-v8.x
+*   angular/cli-v8.3.20
+*   angular/material-v7.3.7
+*   angular/cdk-v7.3.7
 *   angular/flex-layout-v7.0.0-beta.19
-*   [ngx-translate-v11.0.1](https://github.com/ngx-translate)
-*   Following the best practices.
-*   Ahead-of-Time compilation support.
-*   Official Angular i18n support.
-*   Production and development builds.
-*   Tree-Shaking production builds.
+*   Node.js-v10.x
+*   mongoose-v5.9.20
+*   express-v4.17.1
 
 ### How to start
 

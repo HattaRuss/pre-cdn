@@ -1,6 +1,6 @@
 const { User } = require("../models");
 
-// Create and Save a new Tutorial
+// Create and Save a new User
 exports.create = (req, res) => {
 
     const MyDate = new Date();
@@ -65,17 +65,17 @@ exports.findOne = (req, res) => {
     User.findById(id)
       .then(data => {
         if (!data)
-          res.status(404).send({ message: "Not found User with id " + id });
+          res.status(404).send({ message: "Not found record with id " + id });
         else res.send(data);
       })
       .catch(err => {
         res
           .status(500)
-          .send({ message: "Error retrieving User with id=" + id });
+          .send({ message: "Error retrieving record with id=" + id });
       });
 };
 
-// Update a Tutorial by the id in the request
+// Update a User by the id in the request
 exports.update = (req, res) => {
     if (!req.body) {
         return res.status(400).send({
@@ -89,18 +89,18 @@ exports.update = (req, res) => {
         .then(data => {
           if (!data) {
             res.status(404).send({
-              message: `Cannot update User with id=${id}. User was not found!`
+              message: `Cannot update record with id=${id}. User was not found!`
             });
-          } else res.send({ message: "User was updated successfully." });
+          } else res.send({ message: "Record successfully updated." });
         })
         .catch(err => {
           res.status(500).send({
-            message: "Error updating User with id=" + id
+            message: "Error updating record with id=" + id
           });
         });
 };
 
-// Delete a Tutorial with the specified id in the request
+// Delete a User with the specified id in the request
 exports.delete = (req, res) => {
     const id = req.params.id;
     console.log('id: ' + id);
@@ -108,47 +108,17 @@ exports.delete = (req, res) => {
     .then(data => {
       if (!data) {
         res.status(404).send({
-          message: `Cannot delete User with id=${id}. User was not found!`
+          message: `Cannot delete record with id=${id}. User was not found!`
         });
       } else {
         res.send({
-          message: "User was deleted successfully!"
+          message: "Record successfully deleted."
         });
       }
     })
     .catch(err => {
       res.status(500).send({
-        message: "Could not delete User with id=" + id
+        message: "Could not delete record with id=" + id
       });
     });
 };
-
-// Delete all Tutorials from the database.
-exports.deleteAll = (req, res) => {
-    User.deleteMany({})
-    .then(data => {
-      res.send({
-        message: `${data.deletedCount} User were deleted successfully!`
-      });
-    })
-    .catch(err => {
-      res.status(500).send({
-        message:
-          err.message || "Some error occurred while removing all user."
-      });
-    });
-};
-
-// Find all published Tutorials
-// exports.findAllPublished = (req, res) => {
-//     User.find({ published: true })
-//     .then(data => {
-//       res.send(data);
-//     })
-//     .catch(err => {
-//       res.status(500).send({
-//         message:
-//           err.message || "Some error occurred while retrieving tutorials."
-//       });
-//     });
-// };
