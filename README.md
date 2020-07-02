@@ -42,7 +42,7 @@ Provides fast, reliable and extensible starter for the development of Pre CDN Sy
 In order to start the project use:
 
 ```bash
-$ git clone https://github.com/start-javascript/pre-cdn.git
+$ git clone https://github.com/HattaRuss/pre-cdn.git
 $ cd pre-cdn
 # install the project's dependencies
 $ npm install
